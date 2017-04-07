@@ -1,0 +1,124 @@
+h1, h2 {
+    text-align: center;
+}
+
+fieldset {
+    border: none;
+}
+
+legend {
+    text-decoration: underline;
+}
+
+#legends {
+    width: 280px;
+    margin: 0 auto;
+}
+
+#ingredient-legend {
+    width: 100px;
+    height: 100px;
+    display: inline-block;
+    vertical-align: top;
+}
+
+#nutrient-legend {
+    width: 100px;
+    height: 100px;
+    display: inline-block;
+    vertical-align: top;
+    padding-right: 75px;
+}
+
+#allergyText, #allergyButton {
+    display: inline-block;
+}
+
+#allergies {
+    width: 224px;
+    display: inline-block;
+    vertical-align: top;
+}
+
+#labels {
+    width: 110px;
+    display: inline-block;
+    vertical-align: top;
+}
+
+#content {
+    width: 129px;
+    display: inline-block;
+    vertical-align: top;
+}
+
+#sorting {
+    width: 200px;
+    display: inline-block;
+    vertical-align: top;
+}
+
+#allergyList {
+    height: 40px;
+    overflow: auto;
+    list-style: none;
+}
+
+li:hover {
+    color: red;
+}
+
+#container {
+    font-family: sans-serif;
+}
+
+#controls {
+    width: 700px;
+    margin: 0 auto;
+}
+
+#banana {
+    width: 700px;
+    margin: 0 auto;
+}
+
+.nutrient-bar-label, .ingredient-bar-label {
+    font-size: 0.75em;
+}
+
+.ingredient-bar:hover, .nutrient-bar:hover {
+    fill-opacity: 0.75;
+}
+
+.ingredient-bar.allergy {
+    fill: rgb(247,129,191);
+}
+
+.ingredient-bar {
+    fill: rgb(152,78,163);
+}
+
+.nutrient-bar.Proximate {
+    fill: rgb(77,175,74);
+}
+
+.nutrient-bar.Mineral {
+    fill: rgb(55,126,184);
+}
+
+.nutrient-bar.Vitamin {
+    fill: rgb(255,127,0);
+}
+
+.nutrient-bar.Lipid {
+    fill: rgb(228,26,28);
+}
+
+.domain {
+    fill: None;
+    stroke: None;
+}
+
+.axis-label {
+    font-size: 0.75em;
+}

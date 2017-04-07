@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Bytes of Nutrition</title>
+        <link rel="stylesheet" href="style.css">
+        <script type="text/javascript" src="chart.js"></script>
+        <script type="text/javascript" src="legend.js"></script>
+        <script src="https://d3js.org/d3.v4.min.js"></script>
+    </head>
+    <body>
+        <div id="container">
+            <h2>Bytes of Nutrition</h2>
+            <div id="controls">
+                <div id="allergies">
+                    <fieldset>
+                        <legend>Allergies</legend>
+                        <input type="text" id="allergyText">
+                        <input type="button" id="allergyButton"
+                                             value="Add" onclick="addAllergy(this)">
+                        <ul id="allergyList"></ul>
+                    </fieldset>
+                </div>
+                <div id="labels">
+                    <fieldset>
+                        <legend>Labels</legend>
+                        <div>
+                            <label>
+                                <input type="checkbox" id="names" onchange="changeLabels()">
+                                Names
+                            </label>
+                        </div>
+                        <div>
+                            <label>
+                                <input type="checkbox" id="values" onchange="changeLabels()">
+                                Values
+                            </label>
+                        </div>
+                    </fieldset>
+                </div>
+                <div id="content">
+                    <fieldset>
+                        <legend>Nutrients</legend>
+                        <div>
+                            <label>
+                                <input type="checkbox" id="Proximate" checked="checked"
+                                                                      onchange="filterNutrientBars(this)">
+                                Proximates
+                            </label>
+                        </div>
+                        <div>
+                            <label>
+                                <input type="checkbox" id="Mineral" checked="checked"
+                                                                    onchange="filterNutrientBars(this)">
+                                Minerals
+                            </label>
+                        </div>
+                        <div>
+                            <label>
+                                <input type="checkbox" id="Vitamin" checked="checked"
+                                                                    onchange="filterNutrientBars(this)">
+                                Vitamins
+                            </label>
+                        </div>
+                        <div>
+                            <label>
+                                <input type="checkbox" id="Lipid" checked="checked"
+                                                                  onchange="filterNutrientBars(this)">
+                                Lipids
+                            </label>
+                        </div>
+
+                    </fieldset>
+                </div>
+
+
+                <div id="sorting">
+                    <fieldset>
+                        <legend>Nurtient Sorting</legend>
+                        <label><input name="nutrient" type="radio" 
+                                                      value="group" checked="checked" 
+                                                                    onclick="sortNutrientBars()">Group</label>
+                        <label><input id="sortAmount" name="nutrient" type="radio"
+                                                                      value="amount" onclick="sortNutrientBars()">Amount</label>
+                    </fieldset>
+                    <fieldset>
+                        <legend>Ingredient Sorting</legend>
+                        <label><input id="sortSentiment" name="ingredient" type="radio"
+                                                                           value="sentiment"
+                                                                           onclick="sortIngredientBars()">Sentiment</label>
+                        <label>
+                            <input name="ingredient" type="radio"
+                                                     value="amount"
+                                                     onclick="sortIngredientBars()"checked="checked">Amount</label>
+                    </fieldset>
+                </div>
+            </div>
+            <div id="banana">
+            </div>
+            <div id="legends">
+                <div id="nutrient-legend"></div>
+                <div id="ingredient-legend"></div>
+            </div>
+        </div>
+        <script>
+var nutrientLegend = [
+{'color': 'rgb(77,175,74)', 'label': 'Proximate'},
+{'color': 'rgb(55,126,184)', 'label': 'Mineral'},
+{'color': 'rgb(255,127,0)', 'label': 'Vitamin'},
+{'color': 'rgb(228,26,28)', 'label': 'Lipid'},
+];
+
+var ingredientLegend = [
+{'color': 'rgb(152,78,163)', 'label': 'Ingredient'},
+{'color': 'rgb(247,129,191)', 'label': 'Allergy'}
+];
+var legend = Legend();
+d3.select("#nutrient-legend").datum(nutrientLegend).call(legend);
+d3.select("#ingredient-legend").datum(ingredientLegend).call(legend);
+
+var chart = Chart();
+d3.csv("chex-mix-nutrients.csv", function(nutrient_data) {
+    d3.csv("chex-mix-ingredients.csv", function(ingredient_data) {
+        var data = {
+            'nutrients': nutrient_data,
+            'ingredients': ingredient_data,
+            'name': "Chex Mix"
+        };
+        d3.select("#banana")
+            .datum(data)
+            .call(chart);
+    });
+});
+
+function addAllergy() {
+    var textInput = document.getElementById("allergyText");
+    var list = document.getElementById("allergyList");
+    var allergy = textInput.value;
+    textInput.value = "";
+    var item = document.createElement("li");
+    item.setAttribute("title", "remove");
+    item.innerHTML = allergy;
+    item.onclick = removeAllergy;
+    list.appendChild(item);
+    chart.addAllergy(allergy);
+}
+
+function removeAllergy(ev) {
+    var item = ev.target;
+    var allergy = item.innerHTML;
+    item.parentNode.removeChild(item);
+    chart.removeAllergy(allergy);
+}
+
+function changeLabels() {
+    var showNames = document.getElementById("names").checked;
+    var showValues = document.getElementById("values").checked;
+    chart.labels(showNames, showValues); 
+}
+
+function sortNutrientBars() {
+    var amount = document.getElementById("sortAmount").checked;
+    chart.sortNutrientBars(amount);
+}
+
+function sortIngredientBars() {
+    var sentiment = document.getElementById("sortSentiment").checked;
+    chart.sortIngredientBars(sentiment);
+}
+
+function filterNutrientBars(ev) {
+    var change = {
+        'class': ev.id,
+        'value': ev.checked
+    }
+    chart.filterNutrientBars(change);
+}
+        </script>
+    </body>
+</html>

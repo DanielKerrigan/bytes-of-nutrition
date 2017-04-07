@@ -1,0 +1,44 @@
+Source: USDA National Nutrient Database for Standard Reference 28 slightly revised May 2016 Software v.3.7 2017-03-21
+Basic Report
+Report Run at: March 27, 2017 20:43 EDT
+"Nutrient data for: 09040, Bananas, raw"
+Nutrient,Unit,1Value per 100 g,"1 cup, mashed = 225.0g","1 cup, sliced = 150.0g","1 extra small (less than 6"" long) = 81.0g","1 small (6"" to 6-7/8"" long) = 101.0g","1 medium (7"" to 7-7/8"" long) = 118.0g","1 large (8"" to 8-7/8"" long) = 136.0g","1 extra large (9"" or longer) = 152.0g","1 NLEA serving = 126.0g",
+Proximates
+"Water",g,74.91,168.55,112.36,60.68,75.66,88.39,101.88,113.86,94.39
+"Energy",kcal,89,200,134,72,90,105,121,135,112
+"Protein",g,1.09,2.45,1.64,0.88,1.10,1.29,1.48,1.66,1.37
+"Total lipid (fat)",g,0.33,0.74,0.49,0.27,0.33,0.39,0.45,0.50,0.42
+"Carbohydrate, by difference",g,22.84,51.39,34.26,18.50,23.07,26.95,31.06,34.72,28.78
+"Fiber, total dietary",g,2.6,5.8,3.9,2.1,2.6,3.1,3.5,4.0,3.3
+"Sugars, total",g,12.23,27.52,18.34,9.91,12.35,14.43,16.63,18.59,15.41
+Minerals
+"Calcium, Ca",mg,5,11,8,4,5,6,7,8,6
+"Iron, Fe",mg,0.26,0.58,0.39,0.21,0.26,0.31,0.35,0.40,0.33
+"Magnesium, Mg",mg,27,61,40,22,27,32,37,41,34
+"Phosphorus, P",mg,22,50,33,18,22,26,30,33,28
+"Potassium, K",mg,358,806,537,290,362,422,487,544,451
+"Sodium, Na",mg,1,2,2,1,1,1,1,2,1
+"Zinc, Zn",mg,0.15,0.34,0.23,0.12,0.15,0.18,0.20,0.23,0.19
+Vitamins
+"Vitamin C, total ascorbic acid",mg,8.7,19.6,13.1,7.0,8.8,10.3,11.8,13.2,11.0
+"Thiamin",mg,0.031,0.070,0.047,0.025,0.031,0.037,0.042,0.047,0.039
+"Riboflavin",mg,0.073,0.164,0.109,0.059,0.074,0.086,0.099,0.111,0.092
+"Niacin",mg,0.665,1.496,0.998,0.539,0.672,0.785,0.904,1.011,0.838
+"Vitamin B-6",mg,0.367,0.826,0.550,0.297,0.371,0.433,0.499,0.558,0.462
+"Folate, DFE",µg,20,45,30,16,20,24,27,30,25
+"Vitamin B-12",µg,0.00,0.00,0.00,0.00,0.00,0.00,0.00,0.00,0.00
+"Vitamin A, RAE",µg,3,7,4,2,3,4,4,5,4
+"Vitamin A, IU",IU,64,144,96,52,65,76,87,97,81
+"Vitamin E (alpha-tocopherol)",mg,0.10,0.23,0.15,0.08,0.10,0.12,0.14,0.15,0.13
+"Vitamin D (D2 + D3)",µg,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0
+"Vitamin D",IU,0,0,0,0,0,0,0,0,0
+"Vitamin K (phylloquinone)",µg,0.5,1.1,0.8,0.4,0.5,0.6,0.7,0.8,0.6
+Lipids
+"Fatty acids, total saturated",g,0.112,0.252,0.168,0.091,0.113,0.132,0.152,0.170,0.141
+"Fatty acids, total monounsaturated",g,0.032,0.072,0.048,0.026,0.032,0.038,0.044,0.049,0.040
+"Fatty acids, total polyunsaturated",g,0.073,0.164,0.109,0.059,0.074,0.086,0.099,0.111,0.092
+"Fatty acids, total trans",g,0.000,0.000,0.000,0.000,0.000,0.000,0.000,0.000,0.000
+"Cholesterol",mg,0,0,0,0,0,0,0,0,0
+Amino Acids
+Other
+"Caffeine",mg,0,0,0,0,0,0,0,0,0
