@@ -1,10 +1,10 @@
 <!DOCTYPE html>
 <html>
     <head>
+        <meta charset="utf-8">
         <title>Bytes of Nutrition</title>
         <link rel="stylesheet" href="style.css">
         <script type="text/javascript" src="chart.js"></script>
-        <script type="text/javascript" src="legend.js"></script>
         <script src="https://d3js.org/d3.v4.min.js"></script>
     </head>
     <body>
@@ -14,9 +14,10 @@
                 <div id="allergies">
                     <fieldset>
                         <legend>Allergies</legend>
-                        <input type="text" id="allergyText">
-                        <input type="button" id="allergyButton"
-                                             value="Add" onclick="addAllergy(this)">
+                        <input type="text" id="allergyText"
+                            onkeyup="addAllergy(event)">
+                        <input type="submit" id="allergyButton"
+                            value="Add" onclick="addAllergy()">
                         <ul id="allergyList"></ul>
                     </fieldset>
                 </div>
@@ -24,51 +25,44 @@
                     <fieldset>
                         <legend>Labels</legend>
                         <div>
-                            <label>
-                                <input type="checkbox" id="names" onchange="changeLabels()">
-                                Names
-                            </label>
+                            <input type="checkbox" id="names" onchange="changeLabels()">
+                            <label for="names">Names</label>
                         </div>
                         <div>
-                            <label>
-                                <input type="checkbox" id="values" onchange="changeLabels()">
-                                Values
-                            </label>
+                            <input type="checkbox" id="values" onchange="changeLabels()">
+                            <label for="values">Values</label>
                         </div>
                     </fieldset>
                 </div>
                 <div id="content">
                     <fieldset>
                         <legend>Nutrients</legend>
+                        
                         <div>
-                            <label>
-                                <input type="checkbox" id="Proximate" checked="checked"
-                                                                      onchange="filterNutrientBars(this)">
-                                Proximates
-                            </label>
-                        </div>
-                        <div>
-                            <label>
-                                <input type="checkbox" id="Mineral" checked="checked"
-                                                                    onchange="filterNutrientBars(this)">
-                                Minerals
-                            </label>
-                        </div>
-                        <div>
-                            <label>
-                                <input type="checkbox" id="Vitamin" checked="checked"
-                                                                    onchange="filterNutrientBars(this)">
-                                Vitamins
-                            </label>
-                        </div>
-                        <div>
-                            <label>
-                                <input type="checkbox" id="Lipid" checked="checked"
-                                                                  onchange="filterNutrientBars(this)">
-                                Lipids
-                            </label>
+                            <input type="checkbox" id="Lipid" class="legend"
+                                checked="checked" onchange="filterNutrientBars(this)">
+                            <label for="Lipid"> Lipids</label>
                         </div>
 
+                        <div>
+                            <input type="checkbox" id="Mineral" class="legend"
+                                checked="checked" onchange="filterNutrientBars(this)">
+                            <label for="Mineral"> Minerals</label>
+                        </div>
+
+                        <div>
+                            <input type="checkbox" id="Proximate" class="legend"
+                                checked="checked" onchange="filterNutrientBars(this)">
+                            <label for="Proximate"> Proximates</label>
+                        </div>
+                        
+                        
+                        <div>
+                            <input type="checkbox" id="Vitamin" class="legend"
+                                checked="checked" onchange="filterNutrientBars(this)">
+                            <label for="Vitamin"> Vitamins</label>
+                        </div>
+                        
                     </fieldset>
                 </div>
 
@@ -76,33 +70,45 @@
                 <div id="sorting">
                     <fieldset>
                         <legend>Nurtient Sorting</legend>
-                        <label><input name="nutrient" type="radio" 
-                                                      value="group" checked="checked" 
-                                                                    onclick="sortNutrientBars()">Group</label>
-                        <label><input id="sortAmount" name="nutrient" type="radio"
-                                                                      value="amount" onclick="sortNutrientBars()">Amount</label>
+                        <input id="sortGroup" name="nutrient" type="radio"
+                                    value="group" checked="checked"
+                                    onclick="sortNutrientBars()">
+                        <label for="sortGroup">Group</label>
+                        <input id="sortAmount" name="nutrient"
+                                    type="radio"
+                                    value="amount" onclick="sortNutrientBars()">
+                        <label for="sortAmount">Amount</label>
                     </fieldset>
                     <fieldset>
                         <legend>Ingredient Sorting</legend>
-                        <label><input id="sortSentiment" name="ingredient" type="radio"
-                                                                           value="sentiment"
-                                                                           onclick="sortIngredientBars()">Sentiment</label>
-                        <label>
-                            <input name="ingredient" type="radio"
-                                                     value="amount"
-                                                     onclick="sortIngredientBars()"checked="checked">Amount</label>
+                        <input id="sortSentiment" name="ingredient"
+                                    type="radio" value="sentiment"
+                                    onclick="sortIngredientBars()">
+                        <label for="sortSentiment">Sentiment</label>
+                        <input id="sortWeight" name="ingredient" type="radio" value="amount"
+                                onclick="sortIngredientBars()"
+                                checked="checked">
+                        <label for="sortWeight">Amount</label>
                     </fieldset>
                 </div>
             </div>
-            <div id="banana">
+            <div id="vis">
+                <div id="left">
+                    <div id="main">
+                    </div>
+                </div>
+                <div id="right">
+                    <div id="small">
+                    </div>
+                </div>
             </div>
-            <div id="legends">
+            <!--<div id="legends">
                 <div id="nutrient-legend"></div>
                 <div id="ingredient-legend"></div>
-            </div>
+            </div>-->
         </div>
         <script>
-var nutrientLegend = [
+/*var nutrientLegend = [
 {'color': 'rgb(77,175,74)', 'label': 'Proximate'},
 {'color': 'rgb(55,126,184)', 'label': 'Mineral'},
 {'color': 'rgb(255,127,0)', 'label': 'Vitamin'},
@@ -115,65 +121,8 @@ var ingredientLegend = [
 ];
 var legend = Legend();
 d3.select("#nutrient-legend").datum(nutrientLegend).call(legend);
-d3.select("#ingredient-legend").datum(ingredientLegend).call(legend);
-
-var chart = Chart();
-d3.csv("chex-mix-nutrients.csv", function(nutrient_data) {
-    d3.csv("chex-mix-ingredients.csv", function(ingredient_data) {
-        var data = {
-            'nutrients': nutrient_data,
-            'ingredients': ingredient_data,
-            'name': "Chex Mix"
-        };
-        d3.select("#banana")
-            .datum(data)
-            .call(chart);
-    });
-});
-
-function addAllergy() {
-    var textInput = document.getElementById("allergyText");
-    var list = document.getElementById("allergyList");
-    var allergy = textInput.value;
-    textInput.value = "";
-    var item = document.createElement("li");
-    item.setAttribute("title", "remove");
-    item.innerHTML = allergy;
-    item.onclick = removeAllergy;
-    list.appendChild(item);
-    chart.addAllergy(allergy);
-}
-
-function removeAllergy(ev) {
-    var item = ev.target;
-    var allergy = item.innerHTML;
-    item.parentNode.removeChild(item);
-    chart.removeAllergy(allergy);
-}
-
-function changeLabels() {
-    var showNames = document.getElementById("names").checked;
-    var showValues = document.getElementById("values").checked;
-    chart.labels(showNames, showValues); 
-}
-
-function sortNutrientBars() {
-    var amount = document.getElementById("sortAmount").checked;
-    chart.sortNutrientBars(amount);
-}
-
-function sortIngredientBars() {
-    var sentiment = document.getElementById("sortSentiment").checked;
-    chart.sortIngredientBars(sentiment);
-}
-
-function filterNutrientBars(ev) {
-    var change = {
-        'class': ev.id,
-        'value': ev.checked
-    }
-    chart.filterNutrientBars(change);
-}
+d3.select("#ingredient-legend").datum(ingredientLegend).call(legend);*/
         </script>
+        <script type="text/javascript" src="main.js"></script>
     </body>
 </html>

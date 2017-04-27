@@ -1,3 +1,5 @@
+/* HTML element styling */
+
 h1, h2 {
     text-align: center;
 }
@@ -10,12 +12,82 @@ legend {
     text-decoration: underline;
 }
 
-#legends {
-    width: 280px;
-    margin: 0 auto;
+label, span {
+    cursor: default;
 }
 
-#ingredient-legend {
+label {
+    vertical-align: middle;
+}
+
+/*#legends {
+    width: 280px;
+    margin: 0 auto;
+}*/
+
+/* tooltips styling */
+.tooltip {
+    height: 50px;
+    position: absolute;
+    display: inline-block;
+    pointer-events: none;
+    background-color: white;
+    border: 1px solid black;
+    border-radius: 5px;
+    padding: 5px;
+    margin: 0;
+    white-space: pre;
+}
+
+.tooltip.hidden {
+    display: none;
+}
+
+/* checkbox styling */
+
+/* http://stackoverflow.com/questions/34388696/how-to-change-the-background-color-on-a-input-checkbox-with-css */
+
+input[type=checkbox].legend {
+    display: none;
+}
+
+input[type=checkbox].legend + label:before {
+    width: 12px;
+    height: 12px;
+    border: 1px solid #D3D3D3;
+    border-radius: 3px;
+    content: "\00a0";
+    display: inline-block;
+    text-align: center;
+    vertical-align: middle;
+    font-family: sans-serif;
+    font-size: 10px;
+    margin: 3px 0.5ex;
+    padding: 0;
+}
+
+input[type=checkbox]:checked.legend + label:before {
+    color: white;
+    content: "\2713";
+}
+
+input[type=checkbox]:checked.legend#Lipid + label:before {
+    background-color: rgb(166,86,40);
+}
+
+input[type=checkbox]:checked.legend#Vitamin + label:before {
+    background-color: rgb(255,127,0);
+}
+
+input[type=checkbox]:checked.legend#Proximate + label:before {
+    background-color: rgb(77,175,74);
+}
+
+input[type=checkbox]:checked.legend#Mineral + label:before {
+    background-color: rgb(55,126,184);
+}
+
+/*#ingredient-legend {
     width: 100px;
     height: 100px;
     display: inline-block;
@@ -28,43 +100,54 @@ legend {
     display: inline-block;
     vertical-align: top;
     padding-right: 75px;
-}
+}*/
+
+/* interaction controls */
 
 #allergyText, #allergyButton {
     display: inline-block;
 }
 
 #allergies {
-    width: 224px;
+    width: 225px;
     display: inline-block;
     vertical-align: top;
 }
 
+#allergyButton {
+    padding: 0;
+}
+
 #labels {
-    width: 110px;
+    width: 130px;
     display: inline-block;
     vertical-align: top;
 }
 
 #content {
-    width: 129px;
+    width: 135px;
     display: inline-block;
     vertical-align: top;
 }
 
 #sorting {
-    width: 200px;
+    width: 225px;
     display: inline-block;
     vertical-align: top;
 }
 
 #allergyList {
-    height: 40px;
-    overflow: auto;
+    height: 3em;
+    line-height: 1em;
+    width: 200px;
+    overflow-x: auto;
+    overflow-y: scroll;
     list-style: none;
+    margin: 0;
+    padding: 1px;
 }
 
-li:hover {
+.delete:hover {
     color: red;
 }
 
@@ -73,45 +156,70 @@ li:hover {
 }
 
 #controls {
-    width: 700px;
+    width: 730px;
     margin: 0 auto;
 }
 
-#banana {
-    width: 700px;
-    margin: 0 auto;
+#left {
+    float: left;
+    width: 80%;
 }
+
+#right {
+    float: left;
+    width: 20%;
+}
+
+#small .food:hover {
+    border: 1px solid black;
+    border-radius: 5px;
+}
+
+#main {
+    width: 700px;
+    height: 500px;
+    margin: 0 auto;
+    position: relative;
+}
+
+/* visualization styling */
 
 .nutrient-bar-label, .ingredient-bar-label {
     font-size: 0.75em;
 }
 
-.ingredient-bar:hover, .nutrient-bar:hover {
+#main .ingredient-bar:hover, #main .nutrient-bar:hover {
     fill-opacity: 0.75;
 }
 
+/* allergies are red */
 .ingredient-bar.allergy {
-    fill: rgb(247,129,191);
+    fill: rgb(228,26,28);
 }
 
+/* ingredients are purple */
 .ingredient-bar {
     fill: rgb(152,78,163);
 }
 
+/* proximates are green */
 .nutrient-bar.Proximate {
     fill: rgb(77,175,74);
 }
 
+/* minerals are blue */
 .nutrient-bar.Mineral {
     fill: rgb(55,126,184);
 }
 
+/* vitamins are orange */
 .nutrient-bar.Vitamin {
     fill: rgb(255,127,0);
 }
 
+/* lipids are brown */
 .nutrient-bar.Lipid {
-    fill: rgb(228,26,28);
+    fill: rgb(166,86,40);
 }
 
 .domain {
