@@ -15,7 +15,7 @@ function Chart() {
     var sortByAmount = false;
     var sortBySentiment = false;
     var chartData;
-
+    var numElements = 0;
 
     var include = {
         'Proximate': true,
@@ -29,6 +29,9 @@ function Chart() {
     var updateNutrients;
     var sortNutrients;
     var sortIngredients;
+    var drawIngredientBars;
+    var drawNutrientBars;
+    var updateData;
 
     var compareNutrients = function(a, b) {
         if(sortByAmount) {
@@ -81,10 +84,11 @@ function Chart() {
                 data[i].ingredients = ingredients[i];
             }
             
-            var nut_lengths = nutrients.map(function(x) { return x.length; });
-            var ing_lengths = ingredients.map(function(x) { return x.length; });
-            var numElements = Math.max(Math.max(...nut_lengths), Math.max(...ing_lengths));
-
+            if(!numElements) {
+                var nut_lengths = nutrients.map(function(x) { return x.length; });
+                var ing_lengths = ingredients.map(function(x) { return x.length; });
+                numElements = Math.max(Math.max(...nut_lengths), Math.max(...ing_lengths));
+            }
             // scales
 
             var yScale = d3.scaleBand()
@@ -98,79 +102,78 @@ function Chart() {
             var xScaleNutrients = d3.scaleLinear()
                 .domain([0.25, 0])
                 .range([0, width/2 - paddingEdge]);
-
                         
             // tooltip
             if(isFull) {
                 var tooltip = selection.append("div").attr("class", "tooltip hidden")
             }
 
-            // add nutrient bars
-            // bind data to bars
-            var nutrientBars = svg.selectAll(".nutrient-bar")
-                .data(function(d) { return d.nutrients; });
-            // handle new and existing data
-            nutrientBars.enter()
-                .append("rect")
-                .merge(nutrientBars)
-                .attr("class", function(d) {
-                    return "nutrient-bar " + d["class"]; 
-                })
-                .attr("x", function(d) {
-                    return paddingEdge + xScaleNutrients(d["%DV"]);
-                })
-                .attr("y", function(d, i) {
-                    return yScale(i); 
-                })
-                .attr("width", function(d) {
-                    return width/2 - paddingEdge - xScaleNutrients(d["%DV"]);
-                })
-                .attr("height", yScale.bandwidth())
-                .on("mouseover", function(d) {
-                    if(!isFull) return;
-                    tooltip.attr("class", "tooltip")
-                        .text(d.nutrient+"\n"+percentFormat(d["%DV"]) + 
-                            " DV\n" + d.amount + " " + d.unit)
-                        .style("right", (width/2 + margin.left)+"px")
-                        .style("left", "")
-                        .style("top", (+d3.select(this).attr("y")+"px"));
-                })
-                .on("mouseout", function(d) {
-                    if(!isFull) return;
-                    tooltip.attr("class", "tooltip hidden");
-                });
-            // get rid of old/unneeded bars
-            nutrientBars.exit().remove();
+            // // add nutrient bars
+            // // bind data to bars
+            // var nutrientBars = svg.selectAll(".nutrient-bar")
+            //     .data(function(d) { return d.nutrients; });
+            // // handle new and existing data
+            // nutrientBars.enter()
+            //     .append("rect")
+            //     .merge(nutrientBars)
+            //     .attr("class", function(d) {
+            //         return "nutrient-bar " + d["class"]; 
+            //     })
+            //     .attr("x", function(d) {
+            //         return paddingEdge + xScaleNutrients(d["%DV"]);
+            //     })
+            //     .attr("y", function(d, i) {
+            //         return yScale(i); 
+            //     })
+            //     .attr("width", function(d) {
+            //         return width/2 - paddingEdge - xScaleNutrients(d["%DV"]);
+            //     })
+            //     .attr("height", yScale.bandwidth())
+            //     .on("mouseover", function(d) {
+            //         if(!isFull) return;
+            //         tooltip.attr("class", "tooltip")
+            //             .text(d.nutrient+"\n"+percentFormat(d["%DV"]) + 
+            //                 " DV\n" + d.amount + " " + d.unit)
+            //             .style("right", (width/2 + margin.left)+"px")
+            //             .style("left", "")
+            //             .style("top", (+d3.select(this).attr("y")+"px"));
+            //     })
+            //     .on("mouseout", function(d) {
+            //         if(!isFull) return;
+            //         tooltip.attr("class", "tooltip hidden");
+            //     });
+            // // get rid of old/unneeded bars
+            // nutrientBars.exit().remove();
             
-            // add ingredient bars
-            // bind data to bars
-            var ingredientBars = svg.selectAll(".ingredient-bar")
-                .data(function(d) { return d.ingredients; });
-            // handle new and existing data
-            ingredientBars.enter()
-                .append("rect")
-                .merge(ingredientBars)
-                .attr("class", "ingredient-bar")
-                .attr("x", function(d) { return width/2; })
-                .attr("y", function(d, i) { return yScale(i); })
-                .attr("width", function(d) { return xScaleIngredients(d.sentiment); })
-                .attr("height", yScale.bandwidth())
-                .on("mouseover", function(d) {
-                    if(!isFull) return;
-                    tooltip.attr("class", "tooltip")
-                        .text(d.ingredient+"\n"+
-                            percentFormat(d["sentiment"])+
-                            " positive\nAmount Order: "+(d["rank"]+1))
-                        .style("left", (width/2 + margin.left)+"px")
-                        .style("right", "")
-                        .style("top", (+d3.select(this).attr("y"))+"px");
-                })
-                .on("mouseout", function(d) {
-                    if(!isFull) return;
-                    tooltip.attr("class", "tooltip hidden");
-                });
-            // get rid of old/unneeded bars
-            ingredientBars.exit().remove();
+            // // add ingredient bars
+            // // bind data to bars
+            // var ingredientBars = svg.selectAll(".ingredient-bar")
+            //     .data(function(d) { return d.ingredients; });
+            // // handle new and existing data
+            // ingredientBars.enter()
+            //     .append("rect")
+            //     .merge(ingredientBars)
+            //     .attr("class", "ingredient-bar")
+            //     .attr("x", function(d) { return width/2; })
+            //     .attr("y", function(d, i) { return yScale(i); })
+            //     .attr("width", function(d) { return xScaleIngredients(d.sentiment); })
+            //     .attr("height", yScale.bandwidth())
+            //     .on("mouseover", function(d) {
+            //         if(!isFull) return;
+            //         tooltip.attr("class", "tooltip")
+            //             .text(d.ingredient+"\n"+
+            //                 percentFormat(d["sentiment"])+
+            //                 " positive\nAmount Order: "+(d["rank"]+1))
+            //             .style("left", (width/2 + margin.left)+"px")
+            //             .style("right", "")
+            //             .style("top", (+d3.select(this).attr("y"))+"px");
+            //     })
+            //     .on("mouseout", function(d) {
+            //         if(!isFull) return;
+            //         tooltip.attr("class", "tooltip hidden");
+            //     });
+            // // get rid of old/unneeded bars
+            // ingredientBars.exit().remove();
 
             // set up axes
             if(isFull) {
@@ -209,16 +212,103 @@ function Chart() {
             // title
             var transY = isFull ? -40 : -5;
             var fontSize = isFull ? '1em' : '0.75em';
-            svg.append("text")
+            var chartTitle = svg.append("text")
                 .attr("class", "title")
                 .attr("text-anchor", "middle")
                 .attr("font-size", fontSize)
                 .attr("transform", "translate("+width/2+","+transY+")")
                 .text(function(d) { return d.name;});
             
+            drawNutrientBars = function(dur) {
+                // add nutrient bars and bind data to bars
+                var nutrientBars = svg.selectAll(".nutrient-bar")
+                    .data(function(d) { return d.nutrients.filter(filterNutrients).sort(compareNutrients); }, function(d) { return d.nutrient; });
+                // handle new and existing data
+                nutrientBars.enter()
+                    .append("rect")
+                    .attr("class", function(d) {
+                        return "nutrient-bar " + d["class"]; 
+                    })
+                    .on("mouseover", function(d) {
+                        if(!isFull) return;
+                        tooltip.attr("class", "tooltip")
+                            .text(d.nutrient+"\n"+percentFormat(d["%DV"]) + 
+                                " DV\n" + d.amount + " " + d.unit)
+                            .style("right", (width/2 + margin.left)+"px")
+                            .style("left", "")
+                            .style("top", (+d3.select(this).attr("y")+"px"));
+                    })
+                    .on("mouseout", function(d) {
+                        if(!isFull) return;
+                        tooltip.attr("class", "tooltip hidden");
+                    })
+                    .merge(nutrientBars)
+                    .sort(compareNutrients)
+                    .transition()
+                    .duration(dur)
+                    .attr("x", function(d) {
+                        return paddingEdge + xScaleNutrients(d["%DV"]);
+                    })
+                    .attr("y", function(d, i) {
+                        return yScale(i); 
+                    })
+                    .attr("width", function(d) {
+                        return width/2 - paddingEdge - xScaleNutrients(d["%DV"]);
+                    })
+                    .attr("height", yScale.bandwidth());
+                // get rid of old/unneeded bars
+                nutrientBars.exit().remove();
+            };
+            drawNutrientBars(0);
+
+            drawIngredientBars = function(dur) {
+                // add ingredient bars and bind data to bars
+                var ingredientBars = svg.selectAll(".ingredient-bar")
+                    .data(function(d) { return d.ingredients.sort(compareIngredients); }, function(d) { return d.ingredient; });
+                // handle new and existing data
+                ingredientBars.enter()
+                    .append("rect")
+                    .on("mouseover", function(d) {
+                        if(!isFull) return;
+                        tooltip.attr("class", "tooltip")
+                            .text(d.ingredient+"\n"+
+                                percentFormat(d["sentiment"])+
+                                " positive\nAmount Order: "+(d["rank"]+1))
+                            .style("left", (width/2 + margin.left)+"px")
+                            .style("right", "")
+                            .style("top", (+d3.select(this).attr("y"))+"px");
+                    })
+                    .on("mouseout", function(d) {
+                        if(!isFull) return;
+                        tooltip.attr("class", "tooltip hidden");
+                    })
+                    .attr("class", "ingredient-bar")
+                    .merge(ingredientBars)
+                    .transition()
+                    .duration(dur)
+                    .attr("x", function(d) { return width/2; })
+                    .attr("y", function(d, i) { return yScale(i); })
+                    .attr("width", function(d) { return xScaleIngredients(d.sentiment); })
+                    .attr("height", yScale.bandwidth());
+                // get rid of old/unneeded bars
+                ingredientBars.exit().remove();
+            }
+            drawIngredientBars(0);
+
+            updateData = function(value) {
+                svg.data(value);
+                drawNutrientBars(500);
+                drawIngredientBars(500);
+                updateLabels();
+                updateAllergies();
+                chartTitle.text(function(d) {
+                    return d.name;
+                });
+            };
 
             sortNutrients = function() {
-                var bars = svg.selectAll(".nutrient-bar");
+                drawNutrientBars(500);
+                /*var bars = svg.selectAll(".nutrient-bar");
                 bars.sort(compareNutrients)
                     .transition()
                     .duration(500)
@@ -231,7 +321,7 @@ function Chart() {
                     })
                     .attr("width", function(d) { 
                         return width/2 - paddingEdge - xScaleNutrients(d["%DV"]);
-                    });
+                    });*/
 
                 svg.selectAll(".nutrient-bar-label")
                     .sort(compareNutrients)
@@ -246,14 +336,15 @@ function Chart() {
             };
 
             sortIngredients = function() {
-                svg.selectAll(".ingredient-bar")
-                    .sort(compareIngredients)
-                    .transition()
-                    .duration(500)
-                    .attr("y", function(d, i) { return yScale(i); })
-                    .attr("height", yScale.bandwidth())
-                    .attr("x", function(d) { return width/2; })
-                    .attr("width", function(d) { return +xScaleIngredients(d.sentiment); });
+                drawIngredientBars(500);
+                // svg.selectAll(".ingredient-bar")
+                //     .sort(compareIngredients)
+                //     .transition()
+                //     .duration(500)
+                //     .attr("y", function(d, i) { return yScale(i); })
+                //     .attr("height", yScale.bandwidth())
+                //     .attr("x", function(d) { return width/2; })
+                //     .attr("width", function(d) { return +xScaleIngredients(d.sentiment); });
 
                 svg.selectAll(".ingredient-bar-label")
                     .sort(compareIngredients)
@@ -268,7 +359,7 @@ function Chart() {
             updateNutrients = function() {
                 // add nutrient bars
                 // bind data to bars
-                var nutrientBars = svg.selectAll(".nutrient-bar")
+                /*var nutrientBars = svg.selectAll(".nutrient-bar")
                     .data(function(d) {
                             return d.nutrients.filter(filterNutrients).sort(compareNutrients);
                         }, function(d) {
@@ -307,7 +398,8 @@ function Chart() {
                     })
                     .attr("height", yScale.bandwidth());
                 // get rid of old/unneeded bars
-                nutrientBars.exit().remove();
+                nutrientBars.exit().remove();*/
+                drawNutrientBars(500);
                 updateLabels();
             };
 
@@ -359,6 +451,7 @@ function Chart() {
                             }
                             return label;
                         });
+                    labels.exit().remove();
 
                     labels = svg.selectAll(".nutrient-bar-label")
                         .data(function(d) { 
@@ -483,10 +576,18 @@ function Chart() {
         return my;
     };
 
-    my.chartData = function(values) {
-
+    my.updateData = function(value) {
+        updateData(value);
         return my;
-    }
+    };
+
+    my.numElements = function(value) {
+        if(!arguments.length) {
+            return numElements;
+        }
+        numElements = value;
+        return my;
+    };
 
     return my;
 }

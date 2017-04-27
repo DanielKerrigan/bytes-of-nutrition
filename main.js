@@ -1,9 +1,9 @@
 var mult = new Chart()
     .full(false)
     .margin({top: 40, right: 0, bottom: 0, left: 0})
-    .width(150)
+    .width(175)
     .height(150)
-    .paddingEdge(0);
+    .paddingEdge(35);
 
 var chart = new Chart();
 
@@ -27,18 +27,19 @@ d3.queue()
                 'name': "Banana"
             };
             
+            d3.select("#small")
+                .datum([chex, banana])
+                .call(mult);
+
+            chart.numElements(mult.numElements());
             d3.select("#main")
                 .datum([chex])
                 .call(chart);
             
             d3.select("#small")
-                .datum([chex, banana])
-                .call(mult);
-
-            d3.select("#small")
                 .selectAll(".food")
                 .on("click", function(d) {
-                    console.log(this);
+                    chart.updateData([d]);
                 });
         }
     });
