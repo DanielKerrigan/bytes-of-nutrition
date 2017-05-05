@@ -1,0 +1,37 @@
+Source: USDA National Nutrient Database for Standard Reference 28 slightly revised May 2016 Software v.3.7.1 2017-03-29
+Basic Report
+Report Run at: April 28, 2017 14:32 EDT
+"Nutrient data for: 23508, USDA Commodity, beef, ground, bulk/coarse ground, frozen, raw"
+Nutrient,Unit,1Value per 100 g,"1 serving = 85.0g",
+Proximates
+"Water",g,65.81,55.94
+"Energy",kcal,228,194
+"Protein",g,17.37,14.76
+"Total lipid (fat)",g,17.07,14.51
+"Carbohydrate, by difference",g,0.00,0.00
+"Fiber, total dietary",g,0.0,0.0
+Minerals
+"Calcium, Ca",mg,7,6
+"Iron, Fe",mg,1.69,1.44
+"Magnesium, Mg",mg,17,14
+"Phosphorus, P",mg,122,104
+"Potassium, K",mg,246,209
+"Sodium, Na",mg,57,48
+"Zinc, Zn",mg,3.59,3.05
+Vitamins
+"Vitamin C, total ascorbic acid",mg,0.0,0.0
+"Thiamin",mg,0.056,0.048
+"Riboflavin",mg,0.232,0.197
+"Niacin",mg,4.207,3.576
+"Vitamin B-6",mg,0.241,0.205
+"Folate, DFE",µg,7,6
+"Vitamin B-12",µg,1.91,1.62
+"Vitamin A, RAE",µg,0,0
+"Vitamin A, IU",IU,0,0
+Lipids
+"Fatty acids, total saturated",g,6.813,5.791
+"Fatty acids, total monounsaturated",g,7.413,6.301
+"Fatty acids, total polyunsaturated",g,0.710,0.603
+"Cholesterol",mg,69,59
+Amino Acids
+Other

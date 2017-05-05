@@ -1,0 +1,12 @@
+ingredient,sentiment,major
+Milk,0.941789277003684,yes
+Sugar,0.376637080998025,yes
+Modified Corn Starch,0.834129477334157,yes
+Kosher Gelatin,0.571552215094313,no
+Tricalcium Phosphate,0.679617867966459,no
+Vegetable Juice,0.58168700705098,no
+Natural Flavor,0.23307652175806,no
+Potassium Sorbate,0.419979916205212,no
+Carrageenan,0.532492569626732,no
+Vitamin A Acetate,0.325131115284978,no
+Vitamin D3,0.0662854467194123,no

@@ -2,8 +2,8 @@ class,nutrient,unit,amount,DV,%DV
 Proximate,Water,g,88.39,2000,0.044195
 Proximate,Energy,kcal,105,2000,0.0525
 Proximate,Protein,g,1.29,50,0.0258
-Proximate,Total lipid (fat),g,0.39,65,0.006
-Proximate,Carbohydrate,g,26.95,300,0.0898333333333333
+Proximate,Fat,g,0.39,65,0.006
+Proximate,Carbs,g,26.95,300,0.0898333333333333
 Proximate,Fiber,g,3.1,25,0.124
 Proximate,Sugars,g,14.43,100,0.1443
 Mineral,Calcium,mg,6,1000,0.006
@@ -17,11 +17,11 @@ Vitamin,Vitamin C,mg,10.3,60,0.171666666666667
 Vitamin,Thiamin,mg,0.037,1.5,0.0246666666666667
 Vitamin,Riboflavin,mg,0.086,1.7,0.0505882352941176
 Vitamin,Niacin,mg,0.785,20,0.03925
-Vitamin,Vit. B-6,mg,0.433,2,0.2165
+Vitamin,Vitamin B-6,mg,0.433,2,0.2165
 Vitamin,Folate,µg,24,400,0.06
-Vitamin,Vit. A - IU,IU,76,5000,0.0152
-Vitamin,Vit. E (alpha-tocopherol),mg,0.12,27,0.00444444444444444
-Vitamin,Vit. K (phylloquinone),µg,0.6,80,0.0075
+Vitamin,Vitamin A,IU,76,5000,0.0152
+Vitamin,Vitamin E,mg,0.12,27,0.00444444444444444
+Vitamin,Vitamin K,µg,0.6,80,0.0075
 Lipid,Fatty acids - saturated,g,0.132,20,0.0066
 Lipid,Fatty acids - monounsaturated,g,0.038,50,0.00076
 Lipid,Fatty acids - polyunsaturated,g,0.086,50,0.00172

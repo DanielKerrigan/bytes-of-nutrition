@@ -1,0 +1,22 @@
+food,class,nutrient,unit,amount,DV,%DV
+Commodity Beef,Proximate,Water,g,55.94,2000,0.02797
+Commodity Beef,Proximate,Energy,kcal,194,2000,0.097
+Commodity Beef,Proximate,Protein,g,14.76,50,0.2952
+Commodity Beef,Proximate,Fat,g,14.51,65,0.223230769230769
+Commodity Beef,Mineral,Calcium,mg,6,1000,0.006
+Commodity Beef,Mineral,Iron,mg,1.44,18,0.08
+Commodity Beef,Mineral,Magnesium,mg,14,400,0.035
+Commodity Beef,Mineral,Phosphorus,mg,104,1000,0.104
+Commodity Beef,Mineral,Potassium,mg,209,3500,0.0597142857142857
+Commodity Beef,Mineral,Sodium,mg,48,2400,0.02
+Commodity Beef,Mineral,Zinc,mg,3.05,15,0.203333333333333
+Commodity Beef,Vitamin,Thiamin,mg,0.048,1.5,0.032
+Commodity Beef,Vitamin,Riboflavin,mg,0.197,1.7,0.115882352941176
+Commodity Beef,Vitamin,Niacin,mg,3.576,20,0.1788
+Commodity Beef,Vitamin,Vitamin B-6,mg,0.205,2,0.1025
+Commodity Beef,Vitamin,Folate,µg,6,400,0.015
+Commodity Beef,Vitamin,Vitamin B-12,µg,1.62,6,0.27
+Commodity Beef,Lipid,Fatty acids - total saturated,g,5.791,20,0.28955
+Commodity Beef,Lipid,Fatty acids - total monounsaturated,g,6.301,25,0.25204
+Commodity Beef,Lipid,Fatty acids - total polyunsaturated,g,0.603,25,0.02412
+Commodity Beef,Lipid,Cholesterol,mg,59,300,0.196666666666667

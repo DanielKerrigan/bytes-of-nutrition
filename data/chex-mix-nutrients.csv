@@ -1,0 +1,25 @@
+class,nutrient,unit,amount,DV,%DV
+Proximate,Energy,kcal,270,2000,0.135
+Proximate,Protein,g,5,50,0.1
+Proximate,Fat,g,9,65,0.138461538461538
+Proximate,Carbs,g,43,300,0.143333333333333
+Proximate,Fiber,g,4,25,0.16
+Proximate,Sugars,g,16,100,0.16
+Mineral,Calcium,mg,20,1000,0.02
+Mineral,Iron,mg,3.6,18,0.2
+Mineral,Magnesium,mg,8,400,0.02
+Mineral,Phosphorus,mg,20,1000,0.02
+Mineral,Potassium,mg,125,3500,0.0357142857142857
+Mineral,Sodium,mg,75,2400,0.03125
+Mineral,Zinc,mg,0.9,15,0.06
+Vitamin,Vitamin C,mg,1.2,60,0.02
+Vitamin,Thiamin,mg,0.09,1.5,0.06
+Vitamin,Riboflavin,mg,0.136,1.7,0.08
+Vitamin,Niacin,mg,1.6,20,0.08
+Vitamin,Vitamin B-6,mg,0.16,2,0.08
+Vitamin,Vitamin B-12,µg,0.36,6,0.06
+Vitamin,Vitamin A,IU,100,5000,0.02
+Vitamin,Vitamin D,IU,8,400,0.02
+Lipid,Saturated,g,1.002,20,0.0501
+Lipid,Fatty acid - Monounsaturated,g,6,25,0.24
+Lipid,Fatty acid - Polyunsaturated,g,1.998,25,0.07992

@@ -1,0 +1,46 @@
+Source: USDA National Nutrient Database for Standard Reference 28 slightly revised May 2016 Software v.3.7.1 2017-03-29
+Basic Report
+Report Run at: April 28, 2017 14:22 EDT
+"Nutrient data for: 04582, Oil, canola"
+Nutrient,Unit,1Value per 100 g,"1 tbsp = 14.0g","1 cup = 218.0g","1 tsp = 4.5g",
+Proximates
+"Water",g,0.00,0.00,0.00,0.00
+"Energy",kcal,884,124,1927,40
+"Protein",g,0.00,0.00,0.00,0.00
+"Total lipid (fat)",g,100.00,14.00,218.00,4.50
+"Carbohydrate, by difference",g,0.00,0.00,0.00,0.00
+"Fiber, total dietary",g,0.0,0.0,0.0,0.0
+"Sugars, total",g,0.00,0.00,0.00,0.00
+Minerals
+"Calcium, Ca",mg,0,0,0,0
+"Iron, Fe",mg,0.00,0.00,0.00,0.00
+"Magnesium, Mg",mg,0,0,0,0
+"Phosphorus, P",mg,0,0,0,0
+"Potassium, K",mg,0,0,0,0
+"Sodium, Na",mg,0,0,0,0
+"Zinc, Zn",mg,0.00,0.00,0.00,0.00
+Vitamins
+"Vitamin C, total ascorbic acid",mg,0.0,0.0,0.0,0.0
+"Thiamin",mg,0.000,0.000,0.000,0.000
+"Riboflavin",mg,0.000,0.000,0.000,0.000
+"Niacin",mg,0.000,0.000,0.000,0.000
+"Vitamin B-6",mg,0.000,0.000,0.000,0.000
+"Folate, DFE",µg,0,0,0,0
+"Vitamin B-12",µg,0.00,0.00,0.00,0.00
+"Vitamin A, RAE",µg,0,0,0,0
+"Vitamin A, IU",IU,0,0,0,0
+"Vitamin E (alpha-tocopherol)",mg,17.46,2.44,38.06,0.79
+"Vitamin D (D2 + D3)",µg,0.0,0.0,0.0,0.0
+"Vitamin D",IU,0,0,0,0
+"Vitamin K (phylloquinone)",µg,71.3,10.0,155.4,3.2
+Lipids
+"Fatty acids, total saturated",g,7.365,1.031,16.056,0.331
+"Fatty acids, total monounsaturated",g,63.276,8.859,137.942,2.847
+"Fatty acids, total polyunsaturated",g,28.142,3.940,61.350,1.266
+"Fatty acids, total trans",g,0.395,0.055,0.861,0.018
+"Cholesterol",mg,0,0,0,0
+Amino Acids
+Other
+"Caffeine",mg,0,0,0,0
+Footnotes
+(a)"Other phytosterols and phytostanols identified include: beta-sitostanol (0.925 mg), campestanol (0.811 mg) and delta-5 avenasterol (11.721 mg)"

@@ -1,0 +1,5 @@
+food,class,nutrient,unit,amount,DV,%DV
+Pepsi (1.5 Cups),Proximate,Energy,kcal,149,2000,0.0745
+Pepsi (1.5 Cups),Proximate,Carbs,g,41,300,0.136666666666667
+Pepsi (1.5 Cups),Proximate,Sugars,g,41,100,0.41
+Pepsi (1.5 Cups),Mineral,Sodium,mg,28,2400,0.0116666666666667

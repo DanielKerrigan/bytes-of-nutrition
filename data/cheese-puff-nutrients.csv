@@ -1,0 +1,11 @@
+food,class,nutrient,unit,amount,DV,%DV
+Cheese Puffs,Proximate,Energy,kcal,140,2000,0.07
+Cheese Puffs,Proximate,Protein,g,2,50,0.04
+Cheese Puffs,Proximate,Fat,g,8,65,0.123076923076923
+Cheese Puffs,Proximate,Carbohydrate,g,15,300,0.05
+Cheese Puffs,Proximate,Fiber,g,1,25,0.04
+Cheese Puffs,Proximate,Sugar,g,2,100,0.02
+Cheese Puffs,Mineral,Calcium,mg,40,1000,0.04
+Cheese Puffs,Mineral,Iron,mg,0.72,18,0.04
+Cheese Puffs,Mineral,Sodium,mg,330,2400,0.1375
+Cheese Puffs,Lipid,Fatty acids - total saturated",g,1.5,2,0.75

@@ -1,5 +1,9 @@
 /* HTML element styling */
 
+body {
+    font-family: sans-serif;
+}
+
 h1, h2 {
     text-align: center;
 }
@@ -9,7 +13,7 @@ fieldset {
 }
 
 legend {
-    text-decoration: underline;
+    text-decoration: none;
 }
 
 label, span {
@@ -20,10 +24,31 @@ label {
     vertical-align: middle;
 }
 
-/*#legends {
-    width: 280px;
+img {
+    display: block;
+    margin: auto;
+}
+
+/* Narrative Styling guided by http://jgthms.com/web-design-in-4-minutes/ */
+#narrative-container {
+    margin: 0;
+    padding: 0;
+    line-height: 1.5;
+    font-family: sans-serif;
+}
+
+#narrative {
     margin: 0 auto;
-}*/
+    padding: 1em;
+    max-width: 50em;
+}
+
+#line {
+    background: black;
+    height: 2px; 
+    width: 50em;
+}
+
 
 /* tooltips styling */
 .tooltip {
@@ -87,29 +112,18 @@ input[type=checkbox]:checked.legend#Mineral + label:before {
     background-color: rgb(55,126,184);
 }
 
-/*#ingredient-legend {
-    width: 100px;
-    height: 100px;
-    display: inline-block;
-    vertical-align: top;
-}
-
-#nutrient-legend {
-    width: 100px;
-    height: 100px;
-    display: inline-block;
-    vertical-align: top;
-    padding-right: 75px;
-}*/
-
 /* interaction controls */
+
+.underline {
+    text-decoration: underline;
+}
 
 #allergyText, #allergyButton {
     display: inline-block;
 }
 
 #allergies {
-    width: 225px;
+    width: 235px;
     display: inline-block;
     vertical-align: top;
 }
@@ -119,19 +133,19 @@ input[type=checkbox]:checked.legend#Mineral + label:before {
 }
 
 #labels {
-    width: 130px;
+    width: 140px;
     display: inline-block;
     vertical-align: top;
 }
 
 #content {
-    width: 135px;
+    width: 145px;
     display: inline-block;
     vertical-align: top;
 }
 
 #sorting {
-    width: 225px;
+    width: 235px;
     display: inline-block;
     vertical-align: top;
 }
@@ -147,30 +161,48 @@ input[type=checkbox]:checked.legend#Mineral + label:before {
     padding: 1px;
 }
 
+#red-square {
+    color: rgb(228,26,28);
+}
+
+#purple-square {
+    color: rgb(152,78,163);
+}
+
 .delete:hover {
     color: red;
 }
 
-#container {
-    font-family: sans-serif;
-}
-
 #controls {
-    width: 730px;
+    width: 770px;
     margin: 0 auto;
 }
 
 #left {
     float: left;
-    width: 80%;
+    width: 60%;
+    padding-top: 1em;
 }
 
 #right {
     float: left;
-    width: 20%;
+    width: 40%;
+    padding-top: 1em;
 }
 
 #small .food:hover {
+    background-color: lightgray;
+}
+
+#small .food {
+    width: 175px;
+    height: 130px;
+    border: 1px solid white;
+    display: inline-block;
+    border-radius: 5px;
+}
+
+#small .food.selected {
     border: 1px solid black;
     border-radius: 5px;
 }

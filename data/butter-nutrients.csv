@@ -1,0 +1,7 @@
+food,class,nutrient,unit,amount,DV,%DV
+Butter (1 Tbsp),Proximate,Energy,kcal,100,2000,0.05
+Butter (1 Tbsp),Proximate,Fat,g,11,65,0.169230769230769
+Butter (1 Tbsp),Mineral,Sodium,mg,100,2400,0.0416666666666667
+Butter (1 Tbsp),Vitamin,Vitamin A,IU,500,5000,0.1
+Butter (1 Tbsp),Lipid,Fatty acids - total saturated,g,7,20,0.35
+Butter (1 Tbsp),Lipid,Cholesterol,mg,30,300,0.1

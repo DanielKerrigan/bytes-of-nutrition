@@ -1,0 +1,43 @@
+Source: USDA National Nutrient Database for Standard Reference 28 slightly revised May 2016 Software v.3.7.1 2017-03-29
+Basic Report
+Report Run at: April 28, 2017 14:19 EDT
+"Nutrient data for: 09038, Avocados, raw, California"
+Nutrient,Unit,1Value per 100 g,"1 cup, pureed = 230.0g","1 fruit, without skin and seed = 136.0g","1 NLEA serving = 30.0g",
+Proximates
+"Water",g,72.33,166.36,98.37,21.70
+"Energy",kcal,167,384,227,50
+"Protein",g,1.96,4.51,2.67,0.59
+"Total lipid (fat)",g,15.41,35.44,20.96,4.62
+"Carbohydrate, by difference",g,8.64,19.87,11.75,2.59
+"Fiber, total dietary",g,6.8,15.6,9.2,2.0
+"Sugars, total",g,0.30,0.69,0.41,0.09
+Minerals
+"Calcium, Ca",mg,13,30,18,4
+"Iron, Fe",mg,0.61,1.40,0.83,0.18
+"Magnesium, Mg",mg,29,67,39,9
+"Phosphorus, P",mg,54,124,73,16
+"Potassium, K",mg,507,1166,690,152
+"Sodium, Na",mg,8,18,11,2
+"Zinc, Zn",mg,0.68,1.56,0.92,0.20
+Vitamins
+"Vitamin C, total ascorbic acid",mg,8.8,20.2,12.0,2.6
+"Thiamin",mg,0.075,0.172,0.102,0.022
+"Riboflavin",mg,0.143,0.329,0.194,0.043
+"Niacin",mg,1.912,4.398,2.600,0.574
+"Vitamin B-6",mg,0.287,0.660,0.390,0.086
+"Folate, DFE",µg,89,205,121,27
+"Vitamin B-12",µg,0.00,0.00,0.00,0.00
+"Vitamin A, RAE",µg,7,16,10,2
+"Vitamin A, IU",IU,147,338,200,44
+"Vitamin E (alpha-tocopherol)",mg,1.97,4.53,2.68,0.59
+"Vitamin D (D2 + D3)",µg,0.0,0.0,0.0,0.0
+"Vitamin D",IU,0,0,0,0
+"Vitamin K (phylloquinone)",µg,21.0,48.3,28.6,6.3
+Lipids
+"Fatty acids, total saturated",g,2.126,4.890,2.891,0.638
+"Fatty acids, total monounsaturated",g,9.799,22.538,13.327,2.940
+"Fatty acids, total polyunsaturated",g,1.816,4.177,2.470,0.545
+"Fatty acids, total trans",g,0.000,0.000,0.000,0.000
+"Cholesterol",mg,0,0,0,0
+Amino Acids
+Other
